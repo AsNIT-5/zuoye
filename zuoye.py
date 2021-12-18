@@ -1,11 +1,8 @@
 import time
-import urllib3
 import requests
 import random
 import os
 
-# 解决警告
-urllib3.disable_warnings()
 
 
 class ZhiJiao:
@@ -60,7 +57,7 @@ class ZhiJiao:
             return 1
         else:
             print(res)
-            print('❌ 登录异常, 出现未知错误, 请联系管理员！')
+            print('❌ 登录异常, 出现未知错误')
             time.sleep(3)
             exit()
 
@@ -98,9 +95,9 @@ class ZhiJiao:
 if __name__ == "__main__":
     print("\n")
     print("-" * 42)
-    print(">    欢迎使用木异阁职教云刷课（获取答案版）     <")
-    print(">    QQ：1504257947                      <")
-    print(">    微信：HACKER-54946                   <")
+    print(">    欢迎使用木异阁职教云刷课（获取答案版）   <")
+    print(">    QQ：1504257947                        <")
+    print(">    微信：HACKER-54946                     <")
     print('-' * 42, "\n")
     zjy = ZhiJiao()
     print('开始登录...⏳')
@@ -112,7 +109,7 @@ if __name__ == "__main__":
         user = "2111060123"
         password = "Liu123321"
         if zjy.verfiyCode() and zjy.login(user, password):
-            print('登录成功 ✅')
+            print('登录成功 ')
             data = zjy.courseInfo()
             print(data)
             courseOpenId = input("请输入courseOpenId后回车：")
